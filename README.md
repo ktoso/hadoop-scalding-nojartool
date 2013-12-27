@@ -12,7 +12,9 @@ More information about this option and other options to distribute your other ja
 Usage / code
 ============
 
-**Read the source, Luke: https://github.com/ktoso/hadoop-scalding-nojartool/blob/master/src/main/scala/pl/project13/hadoop/NoJarTool.scala**
+Read the source, Luke.
+
+https://github.com/ktoso/hadoop-scalding-nojartool/blob/master/src/main/scala/pl/project13/hadoop/NoJarTool.scala
 
 Call it so:
 
@@ -35,6 +37,12 @@ val tool = new NoJarTool(
 )
 
 ToolRunner.run(conf, tool, argsWithName)
+```
+
+Sbt it so:
+
+```
+sbt 'run-main WordCount' # assumes you'll update IPs in this project (if you want to check it here)
 ```
 
 This will collect all classes from your project, and the jar dependencies, send them over to hadoop and execute.
