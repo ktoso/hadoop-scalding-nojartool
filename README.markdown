@@ -10,6 +10,8 @@ More information about this option and other options to distribute your other ja
 
 == Usage / code ==
 
+**Read the source, Luke: https://github.com/ktoso/hadoop-scalding-nojartool/blob/master/src/main/scala/pl/project13/hadoop/NoJarTool.scala**
+
 Call it so:
 
 ```scala
