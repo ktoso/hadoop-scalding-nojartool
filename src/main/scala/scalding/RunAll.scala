@@ -26,10 +26,7 @@ import scala.io.Source
 object RunAll {
   def main(args: Array[String]) {
     if (args.length == 0) {
-      NGrams.main(args)
       WordCount.main(args)
-      FilterUniqueCountLimit.main(args)
-      TfIdf.main(args)
     } else {
       Run.run(args(0), "", args)
     }
