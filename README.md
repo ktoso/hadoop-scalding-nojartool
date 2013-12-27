@@ -1,4 +1,5 @@
-== NoJarTool ==
+NoJarTool
+=========
 
 NoJarTool is an implementation of `org.apache.hadoop.util.Tool` which aims to allow running Scalding Map Reduce jobs right from your SBT console. The difference with `NoJarTool` as the name implies, means that it's not required to run `assembly` and then submit jobs using the "fat jar".
 
@@ -8,7 +9,8 @@ NoJarTool is an implementation of `org.apache.hadoop.util.Tool` which aims to al
 
 More information about this option and other options to distribute your other jar's is nicely written up here: http://grepalex.com/2013/02/25/hadoop-libjars/
 
-== Usage / code ==
+Usage / code
+============
 
 **Read the source, Luke: https://github.com/ktoso/hadoop-scalding-nojartool/blob/master/src/main/scala/pl/project13/hadoop/NoJarTool.scala**
 
@@ -38,6 +40,7 @@ ToolRunner.run(conf, tool, argsWithName)
 This will collect all classes from your project, and the jar dependencies, send them over to hadoop and execute.
 If you don't set the `mapred.job.tracker` prop, the Tool will complain that you're probably forgetting about it (see the long thread on [cascading-user](https://groups.google.com/forum/#!topic/cascading-user/WaHc5MaIlIs) about devs being confused why jobs are running locally).
 
-== License ==
+License
+=======
 
-Same as Scalding, too lazy to check right now.
+Same as Scalding, too lazy to check right now. It's just one file anyway ;-)
