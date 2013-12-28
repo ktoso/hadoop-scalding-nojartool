@@ -1,7 +1,6 @@
 package pl.project13.hadoop
 
 import org.apache.hadoop.classification.{InterfaceStability, InterfaceAudience}
-import com.twitter.scalding
 import org.apache.hadoop.util.{Tool, ToolRunner}
 import org.apache.hadoop.conf.Configuration
 import java.io.File
@@ -49,29 +48,13 @@ class NoJarTool(
     checkIfConfigValidForRealMode(config)
 
     collectClassesFrom map { classesDir =>
-      val classes = collectClasses(classesDir) map { clazz => prefixWithFileIfNeeded(clazz.toFile.getAbsolutePath) }
+      val classDir = collectClassesFrom.toList map { dir => prefixWithFileIfNeeded(dir.getAbsolutePath) }
       val jars = libJars.map(jar => prefixWithFileIfNeeded(jar.toString))
 
-      setLibJars(config, classes ++ jars)
+      setLibJars(config, classDir ++ jars)
     }
 
     ToolRunner.run(config, wrappedTool, args)
-  }
-
-  protected def collectClasses(classesDir: File): List[Path] = {
-    val buffer = new ListBuffer[Path]() // paths to include
-    val base = classesDir.toPath
-
-    Files.walkFileTree(base, new SimpleFileVisitor[Path] {
-      override def visitFile(file: Path, attrs: BasicFileAttributes): FileVisitResult = {
-        if (file.toFile.isFile)
-          buffer += file
-
-        FileVisitResult.CONTINUE
-      }
-    })
-
-    buffer.toList
   }
 
   /**

@@ -1,18 +1,10 @@
 
 import com.twitter.scalding
 
-import java.io.{IOException, FileInputStream, FileOutputStream, File}
-import java.nio.file._
-import java.nio.file.attribute.BasicFileAttributes
-import java.util.jar.JarOutputStream
-import java.util.zip.ZipOutputStream
-import org.apache.commons.io.IOUtils
+import java.io.File
 import org.apache.hadoop.util.ToolRunner
 import org.apache.hadoop.conf.Configuration
-import org.apache.tools.zip.ZipEntry
 import pl.project13.hadoop.NoJarTool
-import scala.collection.JavaConverters
-import scala.collection.mutable.ListBuffer
 import scala.io.Source
 
 /**
