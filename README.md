@@ -52,3 +52,7 @@ License
 =======
 
 Same as Scalding, too lazy to check right now. It's just one file anyway ;-)
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/ktoso/hadoop-scalding-nojartool/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
